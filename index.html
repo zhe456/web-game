@@ -2,14 +2,79 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0f1730" />
+    <title>接金幣小遊戲</title>
   </head>
   <body>
-    <div id="app">
-      <h1>Web Game</h1>
+    <div id="game">
       <canvas id="game-canvas"></canvas>
+
+      <header id="hud">
+        <div class="hud-item">
+          <span class="hud-label">分數</span>
+          <span id="score" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">最高分</span>
+          <span id="high-score" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">生命</span>
+          <span id="lives" class="hud-value"></span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">等級</span>
+          <span id="level" class="hud-value">1</span>
+        </div>
+      </header>
+
+      <div id="combo-display" class="hidden"></div>
+
+      <div id="fx-badges">
+        <span id="challenge-badge" class="badge badge-challenge hidden">⚔️ 挑戰 8</span>
+        <span id="magnet-badge" class="badge badge-magnet hidden">🧲 5</span>
+        <span id="fever-badge" class="badge badge-fever hidden">🔥 Fever 8</span>
+      </div>
+
+      <div id="corner-controls">
+        <button id="pause-btn" class="icon-btn" type="button" aria-label="暫停">⏸</button>
+        <button id="sound-btn" class="icon-btn" type="button" aria-label="音效開關">🔊</button>
+      </div>
+
+      <div id="overlay" class="overlay">
+        <div class="panel">
+          <h1 id="overlay-title"></h1>
+          <p id="overlay-desc"></p>
+
+          <div id="difficulty-select">
+            <span class="df-label">難度</span>
+            <div class="df-buttons">
+              <button id="diff-easy" type="button" data-difficulty="easy">簡單</button>
+              <button id="diff-normal" type="button" data-difficulty="normal">普通</button>
+              <button id="diff-hard" type="button" data-difficulty="hard">困難</button>
+            </div>
+          </div>
+
+          <button id="start-btn" type="button">開始遊戲</button>
+
+          <div id="leaderboard" class="hidden"></div>
+        </div>
+      </div>
+
+      <div id="mission-card" class="hidden">
+        <div class="mission-head">🎯 任務 <span class="mission-reward"></span></div>
+        <div class="mission-text"></div>
+        <div class="mission-bar"><div class="mission-fill"></div></div>
+        <div class="mission-count"><span class="mission-count-num"></span><span class="mission-time"></span></div>
+      </div>
+
+      <div id="touch-controls">
+        <button id="left-btn" class="touch-btn" type="button" aria-label="向左移動">&#9664;</button>
+        <button id="right-btn" class="touch-btn" type="button" aria-label="向右移動">&#9654;</button>
+      </div>
     </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
