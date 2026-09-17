@@ -1,0 +1,15 @@
+{
+  "name": "web-game",
+  "version": "0.1.0",
+  "description": "A browser-based web game built with HTML, CSS, and JavaScript.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}
